@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _getenv - this function get the value of a enviroment variable
- * @name: name of the variable
+ * @name: name of variable
  * @env: a pointer to env argument of main function
  * Return: buffer if success, NULL otherwise
  */

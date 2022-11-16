@@ -3,7 +3,7 @@
  * _spaces - verify if buffer is only spaces
  * @buffer: buffer input
  *
- * Return: 0 if are only spaces, -1 otherwise
+ * Return: 0 if there are only spaces, -1 otherwise
  */
 int _spaces(char *buffer)
 {
