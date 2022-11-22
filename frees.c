@@ -2,7 +2,7 @@
 /**
  * frees - frees every argument pass
  * @bufCopy: buffer copy, we free it to tokenize again
- * @args: array of arguments to pass
+ * @args: array of arguments pass
  * @path: the entire value of enviroment variable PATH
  * @buffer: input by user(getline)
  */

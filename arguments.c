@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _args - this function takes the command & its arguments
+ * _args - this function takes the command and its arguments
  * and concatenates with the respective path and executes
  * @bufCopy: buffer copy to tokenize
  * @buffer: buffer obtain by getline
