@@ -1,0 +1,14 @@
+.SH SHELL GRAMMAR
+A simple command is a sequence of optional variable assignments followed by blank-separated words and redirections, and terminated by a control operator. The first word specifies the command to be executed, and is passed as argument zero. The remaining words are passed as arguments to the invoked command.
+
+.SH SEE ALSO
+.nf
+        man sh(1)
+        man ksh(1)
+        man csh(1)
+
+.SH COPYRIGHT
+
+Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+
