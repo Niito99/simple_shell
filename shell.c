@@ -1,5 +1,4 @@
 #include "main.h"
-#include "prompt.h"
 
 /**
  * main - entry point of the shell program.
@@ -17,7 +16,7 @@ int main(void)
 
 	while (1)
 	{
-		prompt();
+		void prompt(void);
 		ssize_t read = getline(&line, &n, stdin);
 
 		if (read == -1)
