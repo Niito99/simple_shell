@@ -17,7 +17,7 @@ int main(void)
 
 	while (1)
 	{
-		void prompt(void);
+		prompt();
 		ssize_t read = getline(&line, &n, stdin);
 
 		if (read == -1)
