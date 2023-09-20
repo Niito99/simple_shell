@@ -1,6 +1,8 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#define MAX_PATH_SIZE 1024
+
 /* HEADERS */
 
 #include <stdio.h>

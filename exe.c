@@ -15,25 +15,48 @@ void exec(const char *command)
     }
     args[i] = NULL;
 
-    pid_t pid = fork();
-    
-    if (pid < 0) 
+    char *path = getenv("PATH");
+    char *pathcpy = strdup(path);
+    char *token = strtok(pathcpy, ":");
+
+    int search = 0;
+
+    while (token != NULL)
     {
-        perror("Fork error");
-	exit(EXIT_FAILURE);
-    } 
-    else if (pid == 0) 
-    {
-        if (execvp(args[0], args) == -1) 
-        {
-            perror("Error");
-            exit(EXIT_FAILURE);
-        }
-    } 
-    else 
-    {
-        int status;
-        waitpid(pid, &status, 0);
+	    char full_path[MAX_PATH_SIZE];
+	    snprintf(full_path, sizeof(full_path), "%s/%s", token, args[0]);
+
+	    if (access(full_path, X_OK) == 0)
+	    {
+		    search = 1;
+		    pid_t pid = fork();
+		    if (pid < 0) 
+		    {
+			    perror("Fork error");
+			    exit(EXIT_FAILURE);
+		    }
+		    else if (pid == 0) 
+		    {
+			    if (execv(full_path, args) == -1) 
+			    {
+				    perror("Error");
+				    exit(EXIT_FAILURE);
+			    }
+		    }
+		    else 
+		    {
+			    int status;
+			    waitpid(pid, &status, 0);
+		    }
+		    break;
+		       
+	    }
+	    token = strtok(NULL, ":");
     }
+
+    free(pathcpy);
+    if (!search)
+	    printf("Command not found: %s\n", args[0]);
+
 }
 
