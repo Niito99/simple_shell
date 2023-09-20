@@ -15,6 +15,19 @@ void exec(const char *command)
     }
     args[i] = NULL;
 
+    if (strcmp(args[0], "exit") == 0)
+	    exit(0);
+
+    if (strcmp(args[0], "env") == 0)
+    {
+        char *env_var = getenv("PATH");
+        if (env_var != NULL)
+        {
+            printf("PATH=%s\n", env_var);
+        }
+	return;
+    }
+
     char *path = getenv("PATH");
     char *pathcpy = strdup(path);
     char *token = strtok(pathcpy, ":");
