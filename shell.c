@@ -29,7 +29,5 @@ int main(void)
 
 		exec(line);
 	}
-
-	free(line);
 	return (0);
 }

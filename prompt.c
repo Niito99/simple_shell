@@ -2,5 +2,5 @@
 
 void prompt(void)
 {
-	printf("Nazzy$ ");
+	printf("#Nazzy$ ");
 }
