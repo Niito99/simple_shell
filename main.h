@@ -17,6 +17,8 @@
 /* PROTOTYPES */
 void exec(const char *command);
 void prompt(void);
+void one(const char *command);
+void two(const char *command);
 
 
 #endif
