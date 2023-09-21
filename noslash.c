@@ -9,9 +9,10 @@
 void two(const char *command)
 {
 	char *path_env = getenv("PATH");
-	char *path = strdup(path_env);
+	char *path = copy(path_env);
 	char *token = strtok(path, ":");
 	bool command_found = false;
+	pid_t pid;
 
 	while (token != NULL)
 	{
@@ -21,7 +22,7 @@ void two(const char *command)
 		if (access(full_path, X_OK) == 0)
 		{
 			command_found = true;
-			pid_t pid = fork();
+			pid = fork();
 
 			if (pid < 0)
 				exit(EXIT_FAILURE);
@@ -29,7 +30,7 @@ void two(const char *command)
 			{
 				char *exec_args[2];
 
-				exec_args[0] = strdup(full_path);
+				exec_args[0] = copy(full_path);
 				exec_args[1] = NULL;
 				if (execv(full_path, exec_args) == -1)
 					exit(EXIT_FAILURE);

@@ -10,14 +10,14 @@
 
 int main(void)
 {
-
+	ssize_t read;
 	char *line = NULL;
 	size_t n = 0;
 
 	while (1)
 	{
 		prompt();
-		ssize_t read = getline(&line, &n, stdin);
+		read = getline(&line, &n, stdin);
 
 		if (read == -1)
 		{
