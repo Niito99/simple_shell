@@ -15,7 +15,7 @@ int main(void)
 		if (interactive_mode)
 			display();
 		read_command(line, sizeof(line));
-		if (line[0] == 'e' && line[1] == 'x' && line[2] == 'i' && line[3] == 't' && line[4] == '\0' && line[5])
+		if (line[0] == 'e' && line[1] == 'x' && line[2] == 'i' && line[3] == 't')
 		{
 			exit(0);
 		}
