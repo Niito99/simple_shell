@@ -1,27 +1,23 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef MAIN_H_
+#define MAIN_H_
 
-#define MAX_PATH_SIZE 1024
-#define _POSIX_C_SOURCE 200809L
-
-/* HEADERS */
+/* Includes */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include <string.h>
+#include <stdbool.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <stdbool.h>
+
+/* Prototypes */
+
+void display(void);
+void print_sign(const char *message);
+void execute_command(const char *line);
+void read_command(char *line, size_t len);
 
 
-/* PROTOTYPES */
-void exec(const char *command);
-void prompt(void);
-void one(const char *command);
-void two(const char *command);
-char *copy(char *env);
 
-
-#endif
-
+#endif /* MAIN_H */
