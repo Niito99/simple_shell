@@ -17,7 +17,7 @@ void execute_command(const char *line)
 	}
 	else if (child_pid == 0)
 	{
-		char *args[128];
+		char *args[256];
 		int i = 0;
 		char *token = strtok((char *)line, " ");
 
