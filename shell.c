@@ -23,6 +23,8 @@ int main(void)
 				exit(2);
 			exit(2);
 		}
+		if (*line == ' ')
+			exit(0);
 		execute_command(line);
 	}
 	return (0);
