@@ -17,10 +17,11 @@ int main(void)
 		read_command(line, sizeof(line));
 		if (line[0] == 'e' && line[1] == 'x' && line[2] == 'i' && line[3] == 't')
 		{
-			exit(0);
+			if (line[4] == '\0' && line[5])
+				exit(0);
+			else
+				exit(2);
 		}
-		else
-			exit(2);
 		execute_command(line);
 	}
 	return (0);
