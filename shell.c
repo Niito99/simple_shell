@@ -20,7 +20,7 @@ int main(void)
 			if (line[4] == '\0' && line[5])
 				exit(0);
 			else
-				exit(0);
+				exit(2);
 		}
 		execute_command(line);
 	}
